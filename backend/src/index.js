@@ -15,13 +15,13 @@ dotenv.config();
 
 const PORT = process.env.PORT;
 const __dirname = path.resolve();
-const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:5173";
+
 
 app.use(express.json({ limit: "10mb" }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: CLIENT_URL,
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );
